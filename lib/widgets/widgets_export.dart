@@ -1,0 +1,1 @@
+export 'package:tsw_peliculas2022_app/widgets/card_swiper.dart';

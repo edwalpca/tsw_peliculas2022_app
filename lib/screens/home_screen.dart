@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:tsw_peliculas2022_app/widgets/widgets_export.dart';
 
 
 class HomeScreenPage extends StatelessWidget {
@@ -19,9 +19,21 @@ class HomeScreenPage extends StatelessWidget {
        ],
        ),
        
-      body: const Center(
-        child: Text('HomeScreen -Page-'),
-     ),
+      body: Column(
+        children: const <Widget>[
+
+            //TODO
+            //CardSwiper
+            CardSwiper(),
+
+
+
+            //TODO
+            //Listado horizontal de Peliculas
+
+
+        ],
+      ),
    );
   }
 }
