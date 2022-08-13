@@ -14,3 +14,16 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+
+COMANDOS DE GIT para crear TAGS.
+>> git tag -a v1.0.0 -m "Aplicacion Maquetada"
+
+URL's
+https://www.themoviedb.org/?language=es
+
+API KEY:
+1884c6d6be3392a0de75ce5d8ca0d17e
+https://api.themoviedb.org/3/movie/550?api_key=1884c6d6be3392a0de75ce5d8ca0d17e
+
+https://developers.themoviedb.org/3/getting-started/introduction
