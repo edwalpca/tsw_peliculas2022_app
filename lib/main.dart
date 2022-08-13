@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tsw_peliculas2022_app/routes/app_routes.dart';
 import 'package:tsw_peliculas2022_app/screens/screen_exports.dart';
 
 
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
 
 
       },
+      onGenerateRoute: AppRoutes.onGenerateRoute,
       theme: ThemeData.light().copyWith(
 
         appBarTheme: const AppBarTheme(

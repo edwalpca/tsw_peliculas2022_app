@@ -26,10 +26,13 @@ class HomeScreenPage extends StatelessWidget {
             //CardSwiper
             CardSwiper(),
 
+            //Separador entre el CardSwiper y el Movie Slider
+            SizedBox(height: 15,),
 
 
             //TODO
             //Listado horizontal de Peliculas
+            MovieSlider()
 
 
         ],
