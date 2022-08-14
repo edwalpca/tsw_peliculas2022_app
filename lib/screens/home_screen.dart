@@ -19,6 +19,7 @@ class HomeScreenPage extends StatelessWidget {
 
 
     return Scaffold(
+       //backgroundColor: Colors.black87,
        appBar: AppBar(
        title: const Text('Peliculas 2020 -Page-'),
        elevation: 0,
@@ -45,16 +46,15 @@ class HomeScreenPage extends StatelessWidget {
 
 
             if (moviesProvider.onDisplayMovies.isNotEmpty)
-              CardSwiper(movies: moviesProvider.onDisplayMovies ,),
+              CardSwiper(movies: moviesProvider.onDisplayMovies),
 
 
             //Separador entre el CardSwiper y el Movie Slider
-            const SizedBox(height: 15,),
-
+            //const SizedBox(height: 15,),
 
             //TODO
             //Listado horizontal de Peliculas
-            const MovieSlider()
+            MovieSlider(movies: moviesProvider.popularMoviesList,tituloSlider: 'Las mas Populares...',)
 
 
         ],
