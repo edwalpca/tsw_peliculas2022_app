@@ -29,10 +29,10 @@ class NowPlaying {
     
     
     factory NowPlaying.fromMap(Map<String, dynamic> json) => NowPlaying(
-        dates: Dates.fromMap(json["dates"]),
-        page: json["page"],
-        results: List<Movie>.from(json["results"].map((x) => Movie.fromMap(x))),
-        totalPages: json["total_pages"],
+        dates       : Dates.fromMap(json["dates"]),
+        page        : json["page"],
+        results     : List<Movie>.from(json["results"].map((x) => Movie.fromMap(x))),
+        totalPages  : json["total_pages"],
         totalResults: json["total_results"],
     );
 
