@@ -40,7 +40,7 @@ class MoviesProvider extends ChangeNotifier {
   // Ejemplo: [int page =1 ], de manera que si no lo envian
   // setea el valor a 1 por defecto.
   Future<String> _getJsonData(String endPointUrl, [int page = 1]) async {
-    var url = Uri.https(_baseUrl, '${endPointUrl}',
+    final url = Uri.https(_baseUrl, '${endPointUrl}',
         {'api_key': _apiKey, '_language': _language, 'page': '$page '});
 
     final respuesta = await http.get(url);
@@ -139,5 +139,22 @@ class MoviesProvider extends ChangeNotifier {
     //pelicula.
     moviesCast[movieId] = creditsResponse.cast;
     return creditsResponse.cast;
+  }
+
+  Future<List<Movie>> searchMovie(String query, [int page = 1]) async {
+    final url = Uri.https(_baseUrl, '3/search/movie', {
+      'api_key': _apiKey,
+      '_language': _language,
+      'page': '$page ',
+      'query': query
+    });
+    //
+    if (query.isNotEmpty) {
+      final respuesta = await http.get(url);
+      final searchResponse = SearchResponse.fromJson(respuesta.body);
+      return searchResponse.results;
+    } else {
+      return [];
+    }
   }
 }
