@@ -128,9 +128,14 @@ class MoviesProvider extends ChangeNotifier {
 
   //Metodo para Obtener la lista de los actores de las peliculas.
   Future<List<Cast>> getMoviesCast(int movieId) async {
+    //Evaluo si el Mapa contiene la lista de actores para no realizar la consulta nuevamente.
+    if (moviesCast.containsKey(movieId)) {
+      return moviesCast[movieId]!;
+    }
+
     final respuesta = await _getJsonData('3/movie/${movieId}/credits');
     final creditsResponse = CreditsResponse.fromJson(respuesta);
-    //Almaceno en mi variable la resppuesta de Actores de la 
+    //Almaceno en mi variable la resppuesta de Actores de la
     //pelicula.
     moviesCast[movieId] = creditsResponse.cast;
     return creditsResponse.cast;

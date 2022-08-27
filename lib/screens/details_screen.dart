@@ -14,25 +14,27 @@ class DetailsScreen extends StatelessWidget {
     //validarlo con ?? para asignarle un valor por defecto en caso de no venir nada en los argumentos.
     final movie = ModalRoute.of(context)!.settings.arguments as Movie;
 
-    return Scaffold(
-        body: CustomScrollView(
-      slivers: [
-        //Custom App Bar que es de tipo Sliver.
-        _CustomAppBar(movie: movie),
-        //Toda la conleccion de Widgets en este bloque deben ser derivados
-        //de los slivers, NO todos los widgets pueden colocarse en este bloque
-        //por decirlo asi deben ser Familia
+    return SafeArea(
+      child: Scaffold(
+          body: CustomScrollView(
+        slivers: [
+          //Custom App Bar que es de tipo Sliver.
+          _CustomAppBar(movie: movie),
+          //Toda la conleccion de Widgets en este bloque deben ser derivados
+          //de los slivers, NO todos los widgets pueden colocarse en este bloque
+          //por decirlo asi deben ser Familia
 
-        SliverList(
-            delegate: SliverChildListDelegate([
-          _PosterAndTitle(movie: movie),
-          _OverView(
-            movie: movie,
-          ),
-          CastingCards(movieid: movie.id)
-        ])),
-      ],
-    ));
+          SliverList(
+              delegate: SliverChildListDelegate([
+            _PosterAndTitle(movie: movie),
+            _OverView(
+              movie: movie,
+            ),
+            CastingCards(movieId: movie.id)
+          ])),
+        ],
+      )),
+    );
   }
 }
 
@@ -45,7 +47,6 @@ class _CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   
     final textTheme = Theme.of(context).textTheme;
 
     return SliverAppBar(

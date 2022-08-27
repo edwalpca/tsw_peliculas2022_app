@@ -3,6 +3,8 @@ import 'package:provider/provider.dart';
 import 'package:tsw_peliculas2022_app/providers/movies_provider.dart';
 import 'package:tsw_peliculas2022_app/widgets/widgets_export.dart';
 
+import '../search/search_delegate.dart';
+
 class HomeScreenPage extends StatelessWidget {
   const HomeScreenPage({Key? key}) : super(key: key);
   @override
@@ -22,7 +24,9 @@ class HomeScreenPage extends StatelessWidget {
           elevation: 0,
           actions: [
             IconButton(
-                onPressed: () {}, icon: const Icon(Icons.search_outlined))
+                onPressed: () => showSearch(
+                    context: context, delegate: MovieSearchDelegate()),
+                icon: const Icon(Icons.search_outlined))
           ],
         ),
 

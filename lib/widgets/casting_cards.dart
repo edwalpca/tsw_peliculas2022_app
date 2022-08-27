@@ -1,30 +1,60 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:tsw_peliculas2022_app/providers/movies_provider.dart';
+
+import '../models/models_export.dart';
 
 class CastingCards extends StatelessWidget {
-  final int movieid;
+  final int movieId;
 
-  const CastingCards({Key? key, required this.movieid}) : super(key: key);
+  const CastingCards({Key? key, required this.movieId}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 30),
-      width: double.infinity,
-      height: 210,
-      // color: Colors.red,
-      child: ListView.builder(
-          itemCount: 10,
-          //Direccion de mi Scroll
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (_, int index) {
-            return const _CardActores();
-          }),
+    final moviesProvider = Provider.of<MoviesProvider>(context, listen: false);
+
+    return FutureBuilder(
+      future: moviesProvider.getMoviesCast(movieId),
+      //initialData: InitialData,
+      builder: (_, AsyncSnapshot<List<Cast>> snapshot) {
+        if (!snapshot.hasData) {
+          return Container(
+            child: Column(
+              children: const [
+                Text('Cargando informacion....'),
+                SizedBox(height: 10),
+                CircularProgressIndicator()
+              ],
+            ),
+          );
+        }
+
+        final List<Cast> cast = snapshot.data!;
+
+        return Container(
+          margin: const EdgeInsets.only(bottom: 30),
+          width: double.infinity,
+          height: 210,
+          // color: Colors.red,
+          child: ListView.builder(
+              itemCount: 10,
+              //Direccion de mi Scroll
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (_, int index) {
+                return _CardActores(
+                  actor: cast[index],
+                );
+              }),
+        );
+      },
     );
   }
 }
 
 class _CardActores extends StatelessWidget {
-  const _CardActores({Key? key}) : super(key: key);
+  final Cast actor;
+
+  const _CardActores({Key? key, required this.actor}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,16 +63,16 @@ class _CardActores extends StatelessWidget {
       margin: const EdgeInsets.symmetric(
         horizontal: 10,
       ),
-      width: 110,
+      width: 100,
       height: 130,
       //color: Colors.green,
       child: Column(
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(20),
-            child: const FadeInImage(
-              placeholder: AssetImage('assets/no-image.jpg'),
-              image: NetworkImage('https://via.placeholder.com/200x300'),
+            child: FadeInImage(
+              placeholder: const AssetImage('assets/no-image.jpg'),
+              image: NetworkImage(actor.fullprofilePath),
               fit: BoxFit.cover,
             ),
           ),
@@ -51,7 +81,7 @@ class _CardActores extends StatelessWidget {
             height: 8,
           ),
           //Titulo de los actores.
-          const Text('actor.nombre',
+          Text(actor.name,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.center)
