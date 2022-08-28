@@ -49,9 +49,10 @@ class MovieSearchDelegate extends SearchDelegate {
     //Apagamos la bandera del listen en false par aque el Widget
     // no se esta redibujando de manera innecesaria.
     final moviesProvider = Provider.of<MoviesProvider>(context, listen: false);
+    moviesProvider.getSuggestionsByQuery(query);
 
-    return FutureBuilder(
-      future: moviesProvider.searchMovie(query),
+    return StreamBuilder(
+      stream: moviesProvider.suggestionStream,
       //initialData: InitialData,
       builder: (_, AsyncSnapshot<List<Movie>> snapshot) {
         if (snapshot.hasData) {

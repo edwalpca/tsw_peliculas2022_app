@@ -29,6 +29,14 @@ class CastingCards extends StatelessWidget {
           );
         }
 
+        if (snapshot.data!.isEmpty) {
+          return Center(
+            child: Container(
+                child: const Text(
+                    'No hay lista de actores relacionados con la pelicula')),
+          );
+        }
+
         final List<Cast> cast = snapshot.data!;
 
         return Container(

@@ -1,7 +1,9 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
+import 'package:tsw_peliculas2022_app/helpers/debouncer.dart';
 
 import '../models/models_export.dart';
 
@@ -21,6 +23,24 @@ class MoviesProvider extends ChangeNotifier {
 
   int _popularPage = 0;
 
+  //Se adiciona el funcionamiento de Stream para la busqueda de pelicular.
+  //se define un StreamController que va a estar escuchando una estructura de lista de peliculas.
+  //Se define tipo BroadCast pq puede estar muchos componentes escuchando el StreamController.
+  final StreamController<List<Movie>> _suggestionsStreamController =
+      new StreamController.broadcast();
+
+  //Necesito una variable que debe estar escuchando lo que Genera el StreamCrontroller por lo tanto
+  //se define la siguiente variable de tipo getter, en realidad es una funcion de tipo getter.
+  Stream<List<Movie>> get suggestionStream {
+    return _suggestionsStreamController.stream;
+  }
+
+  //Importo el deboucer.
+  final deboucer = Debouncer(duration: const Duration(seconds: 5));
+  ////
+  ///
+  ///
+  ///
   MoviesProvider() {
     print('Movies Provider Inicializado');
 
@@ -155,6 +175,30 @@ class MoviesProvider extends ChangeNotifier {
       return searchResponse.results;
     } else {
       return [];
+    }
+  }
+
+  //Ahora lo que se requiere es el componente que inyecte la informacion al StremController.
+  void getSuggestionsByQuery(String string) {
+    if (string.isNotEmpty) {
+      deboucer.value = '';
+      deboucer.onValue = (value) async {
+        print('Tenemos un valor a buscar');
+        //Mandamos despues de los 4 segundos de que el usuario paro de escribir la peticion http/
+        final results = await searchMovie(value);
+
+        //Le digo al StreamController que inyecte informacion.
+        _suggestionsStreamController.add(results);
+      };
+
+      final timer = Timer.periodic(const Duration(milliseconds: 300), (_) {
+        deboucer.value = string;
+      });
+
+      //Cancelar el Timer cuando se recibe un nuevo valor en el deboucer.
+      //Este componente es importante
+      Future.delayed(const Duration(milliseconds: 301))
+          .then((value) => timer.cancel());
     }
   }
 }
