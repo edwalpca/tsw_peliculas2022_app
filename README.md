@@ -1,12 +1,20 @@
 # tsw_peliculas2022_app
 
-A new Flutter project.
+Refactorización del App de Peliculas repaso de Curso y sección con la versión de NullSafety y la actualización que realizó FH.
 
-## Getting Started
+## Temas y Componentes vistos
 
-This project is a starting point for a Flutter application.
+Estos son algunos de los temas principales de la sección:
 
-A few resources to get you started if this is your first Flutter project:
+Consumo de servicios REST
+Conversión de JSON --> Maps --> Modelos
+PageViews
+ApiKeys
+Providers
+Streams
+Infinite Horizontal Scroll
+SearchDelegate
+Debounce para retardo de la busqueda.
 
 - [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
@@ -19,11 +27,6 @@ samples, guidance on mobile development, and a full API reference.
 COMANDOS DE GIT para crear TAGS.
 >> git tag -a v1.0.0 -m "Aplicacion Maquetada"
 
-URL's
+## WebSite y Tools de Apoyo 
 https://www.themoviedb.org/?language=es
-
-API KEY:
-1884c6d6be3392a0de75ce5d8ca0d17e
-https://api.themoviedb.org/3/movie/550?api_key=1884c6d6be3392a0de75ce5d8ca0d17e
-
-https://developers.themoviedb.org/3/getting-started/introduction
+https://quicktype.io/
