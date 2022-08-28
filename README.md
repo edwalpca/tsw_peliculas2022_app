@@ -1,6 +1,6 @@
-# tsw_peliculas2022_app
+# PeliculasApp 2022 ( Repaso)
 
-Refactorización del App de Peliculas repaso de Curso y sección con la versión de NullSafety y la actualización que realizó FH.
+Refactorización del App de Películas repaso de Curso y sección con la versión de NullSafety y la actualización que realizó FH.
 
 ## Temas y Componentes vistos
 
