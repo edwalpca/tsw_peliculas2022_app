@@ -16,8 +16,9 @@ Estos son algunos de los temas principales de la sección:
 - SearchDelegate
 - Debounce para retardo de la busqueda.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- [Flutter WebSite](https://flutter.dev/docs/get-started/codelab)
+- [Api Flutter](https://api.flutter.dev/flutter/material/Scaffold-class.html)
+- [Dart packages](https://pub.dev/)
 
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
