@@ -16,6 +16,10 @@ class Movie {
   double voteAverage;
   int voteCount;
 
+  //Propidad utilizada para que el Herosiempre funcione
+  //
+  String? heroId; 
+
   Movie({
     required this.adult,
     this.backdropPath,
