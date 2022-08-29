@@ -29,4 +29,4 @@ Estos son algunos de los temas principales de la sección:
 
 ## ScreenShots
 ![Home Page](https://bitbucket.org/mauricio-flutter/tsw_peliculas2022_app/src/master/info_proyecto/HomePage.png)
-![Detalle Page](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+![Detalle Page](https://bitbucket.org/mauricio-flutter/tsw_peliculas2022_app/src/master/info_proyecto/DetallePage.png)
