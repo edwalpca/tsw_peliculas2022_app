@@ -18,7 +18,7 @@ Estos son algunos de los temas principales de la sección:
 
 
 # COMANDOS DE GIT para crear TAGS.
-- >> git tag -a v1.0.0 -m "Aplicacion Maquetada"
+- git tag -a v1.0.0 -m "Aplicacion Maquetada"
 
 ## WebSites y Herramientas de Apoyo 
 - [MovieDb WebSite](https://www.themoviedb.org/?language=es)
