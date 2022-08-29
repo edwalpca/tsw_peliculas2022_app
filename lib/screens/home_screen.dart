@@ -18,9 +18,10 @@ class HomeScreenPage extends StatelessWidget {
 
     return SafeArea(
       child: Scaffold(
-        //backgroundColor: Colors.black87,
+        backgroundColor: Colors.black87,
         appBar: AppBar(
-          title: const Text('Peliculas 2020 -Page-'),
+          backgroundColor: Colors.black87,
+          title: const Text('Películas 2022'),
           elevation: 0,
           actions: [
             IconButton(
@@ -29,7 +30,6 @@ class HomeScreenPage extends StatelessWidget {
                 icon: const Icon(Icons.search_outlined))
           ],
         ),
-
         body: Column(
           children: <Widget>[
             //CardSwiper
@@ -43,7 +43,9 @@ class HomeScreenPage extends StatelessWidget {
               CardSwiper(movies: moviesProvider.onDisplayMovies),
 
             //Separador entre el CardSwiper y el Movie Slider
-            //const SizedBox(height: 15,),
+            const SizedBox(
+              height: 5,
+            ),
 
             //Listado horizontal de Peliculas
             MovieSlider(
