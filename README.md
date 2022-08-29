@@ -26,3 +26,7 @@ Estos son algunos de los temas principales de la sección:
 - [Flutter WebSite](https://flutter.dev/docs/get-started/codelab)
 - [Api Flutter](https://api.flutter.dev/flutter/material/Scaffold-class.html)
 - [Dart packages](https://pub.dev/)
+
+## ScreenShots
+![alt text](https://bitbucket.org/mauricio-flutter/tsw_peliculas2022_app/src/master/info_proyecto/HomePage.png)
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
