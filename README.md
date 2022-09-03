@@ -18,7 +18,7 @@ Estos son algunos de los temas principales de la sección:
 
 
 # COMANDOS DE GIT para crear TAGS.
-- >> git tag -a v1.0.0 -m "Aplicacion Maquetada"
+- git tag -a v1.0.0 -m "Aplicacion Maquetada"
 
 ## WebSites y Herramientas de Apoyo 
 - [MovieDb WebSite](https://www.themoviedb.org/?language=es)
@@ -26,3 +26,7 @@ Estos son algunos de los temas principales de la sección:
 - [Flutter WebSite](https://flutter.dev/docs/get-started/codelab)
 - [Api Flutter](https://api.flutter.dev/flutter/material/Scaffold-class.html)
 - [Dart packages](https://pub.dev/)
+
+## ScreenShots
+![Home Page](https://bitbucket.org/mauricio-flutter/tsw_peliculas2022_app/src/master/info_proyecto/HomePage.png)
+![Detalle Page](https://bitbucket.org/mauricio-flutter/tsw_peliculas2022_app/src/master/info_proyecto/DetallePage.png)
