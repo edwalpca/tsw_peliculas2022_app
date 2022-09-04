@@ -16,6 +16,7 @@ class DetailsScreen extends StatelessWidget {
 
     return SafeArea(
       child: Scaffold(
+          //backgroundColor: Colors.black87,
           body: CustomScrollView(
         slivers: [
           //Custom App Bar que es de tipo Sliver.
@@ -115,31 +116,37 @@ class _PosterAndTitle extends StatelessWidget {
             children: [
               Text(
                 movie.title,
-                style: textTheme.titleSmall,
+                style: const TextStyle(color: Colors.black, fontSize: 22),
                 overflow: TextOverflow.ellipsis,
                 maxLines: 2,
               ),
+              Text('Titulo Original',
+                  style: textTheme.subtitle1,
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 1),
               Text(movie.originalTitle,
                   style: textTheme.subtitle1,
                   overflow: TextOverflow.ellipsis,
                   maxLines: 1),
+              Container(
+                width: double.infinity,
+                height: 20,
+                color: Colors.white,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: movie.voteAverage.ceil(),
+                  itemBuilder: (_, int index) {
+                    return const Icon(
+                      Icons.star_rate,
+                      size: 20,
+                      color: Colors.red,
+                    );
+                  },
+                ),
+              ),
               Row(
                 children: [
-                  const Icon(
-                    Icons.star_border_outlined,
-                    size: 15,
-                    color: Colors.grey,
-                  ),
-                  const Icon(
-                    Icons.star_border_outlined,
-                    size: 15,
-                    color: Colors.grey,
-                  ),
-                  const Icon(
-                    Icons.star_border_outlined,
-                    size: 15,
-                    color: Colors.grey,
-                  ),
+                  Text('Rating:', style: textTheme.caption),
                   Text(movie.voteAverage.toString(), style: textTheme.caption),
                 ],
               )

@@ -18,7 +18,8 @@ class MovieSlider extends StatefulWidget {
 }
 
 class _MovieSliderState extends State<MovieSlider> {
-  final ScrollController scrollController = new ScrollController();
+  
+  final ScrollController scrollController = ScrollController();
 
   @override
   void initState() {
