@@ -8,7 +8,7 @@ import 'package:tsw_peliculas2022_app/helpers/debouncer.dart';
 import '../models/models_export.dart';
 
 class MoviesProvider extends ChangeNotifier {
-  final String _apiKey = '1884c6d6be3392a0de75ce5d8ca0d17e';
+  final String _apiKey = '1784c6d6be3392a0de75ce5d8ca0d17e';
   final String _baseUrl = 'api.themoviedb.org';
   final String _language = 'es-ES';
 
