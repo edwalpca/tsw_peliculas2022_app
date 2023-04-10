@@ -28,5 +28,7 @@ Estos son algunos de los temas principales de la sección:
 - [Dart packages](https://pub.dev/)
 
 ## ScreenShots
+Home Screen 
 ![Home Page](https://github.com/edwalpca/tsw_peliculas2022_app/blob/main/info_proyecto/HomePage.png)
+Detalle Screen
 ![Detalle Page](https://github.com/edwalpca/tsw_peliculas2022_app/blob/main/info_proyecto/DetallePage.png)
